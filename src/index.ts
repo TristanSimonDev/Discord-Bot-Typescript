@@ -12,7 +12,7 @@ Client.on('ready', (Client) => {
 })
 
 Client.on('messageCreate', async message => {
-    
+    MessageReply(message)
 })
 
 Client.login(process.env.TOKEN)
