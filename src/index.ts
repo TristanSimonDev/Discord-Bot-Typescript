@@ -10,4 +10,8 @@ Client.on('ready', (Client) => {
     console.log(`Client: ${Client.user.tag} is ready`)
 })
 
+Client.on('messageCreate', async message => {
+    
+})
+
 Client.login(process.env.TOKEN)
