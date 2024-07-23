@@ -7,6 +7,7 @@ const Client = new Discord.Client({
     intents: [3276799],
 })
 
+
 Client.on('ready', (Client) => {
     console.log(`Client: ${Client.user.tag} is ready`)
 })

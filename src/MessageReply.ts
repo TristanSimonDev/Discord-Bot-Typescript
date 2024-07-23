@@ -1,5 +1,6 @@
 import * as Discord from "discord.js";
 import * as Settings from "../.vscode/Settings.json";
+import { sendEmbeed } from './AutoEmbeed'
 const prefix = Settings.Prefix;
 const commands = Settings.Commands;
 
@@ -8,14 +9,22 @@ export function MessageReply(message: Discord.Message) {
     const messagecontent = message.content;
     const args = messagecontent.split(" ");
 
-    if (args[0] == prefix.HelpPrefix + commands.help && args[1] === "test") {
-        message.reply("you used the test command");
-    }
+    //Help events
 
     if (messagecontent == prefix.HelpPrefix + commands.help) {
         message.reply("you used the help command");
     }
 
+    //info commands
     
-        
+    if (args[0] == prefix.InfoPrefix + commands.info) {
+        message.reply(`This guild has ${message.guild?.memberCount} members.`);
+    } 
+
+    if (messagecontent == "test") {
+        sendEmbeed(message)
+    }
+
+    
+             
 }

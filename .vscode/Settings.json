@@ -1,7 +1,8 @@
 {
     "GuildID": "",
     "Prefix": {
-        "HelpPrefix": "?"
+        "HelpPrefix": "?",
+        "InfoPrefix": "!"
     },
     "Commands": {
         "help": "help",
