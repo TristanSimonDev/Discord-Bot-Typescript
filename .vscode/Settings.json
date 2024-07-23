@@ -1,6 +1,12 @@
 {
+    "GuildID": "",
     "Prefix": {
         "HelpPrefix": "?"
-          
+    },
+    "Commands": {
+        "help": "help",
+        "membercount": "membercount",
+        "info": "info",
+        "server": "info"
     }
 }
