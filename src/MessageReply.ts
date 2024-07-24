@@ -1,6 +1,6 @@
 import * as Discord from "discord.js";
 import * as Settings from "../.vscode/Settings.json";
-import { sendEmbeed } from './AutoEmbeed'
+import { sendEmbeed } from "./AutoEmbeed";
 const prefix = Settings.Prefix;
 const commands = Settings.Commands;
 
@@ -16,15 +16,12 @@ export function MessageReply(message: Discord.Message) {
     }
 
     //info commands
-    
+
     if (args[0] == prefix.InfoPrefix + commands.info) {
         message.reply(`This guild has ${message.guild?.memberCount} members.`);
-    } 
-
-    if (messagecontent == "test") {
-        sendEmbeed(message)
     }
 
-    
-             
+    if (messagecontent == "test") {
+        sendEmbeed(message, "test", "this is a footer", "https://github.com/TristanSimonDev/Discord-Bot-Typescript/blob/main/img/gpt.jpg");
+    }
 }
