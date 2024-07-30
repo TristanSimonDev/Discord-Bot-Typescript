@@ -7,6 +7,7 @@
         "skipLibCheck": true, // Skip type checking of all declaration files (*.d.ts)
         "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file
         "outDir": "./dist", // Redirect output structure to the directory
+        "allowSyntheticDefaultImports": true,
         "rootDir": "./src", // Specify the root directory of input files
         "baseUrl": ".", // Base directory to resolve non-relative module names
         "paths": {

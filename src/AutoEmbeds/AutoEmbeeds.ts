@@ -1,25 +1,22 @@
-import * as Discord from 'discord.js';
+import * as Discord from "discord.js";
+import * as json from "../../.vscode/Settings.json";
+
+const Channels = json.Channels;
+
+
 
 /*
 AutoEmbeds
 */
 
+export function WelcomeEmbed(Member: Discord.GuildMember) {
+    let WelcomeChannel = Member.guild.channels.cache.get(Channels["Welcome-Channel"]) as Discord.TextChannel
+    const WelcomeEmbed = new Discord.EmbedBuilder().setTitle(
+        `Welcome ${Member}`
 
-export function sendEmbed(
-    message: Discord.Message,
-    title: string,
-    description: string,
-    footerText: string,
-    footerIcon: string
-) {
-    try {
-        const embed = new Discord.EmbedBuilder()
-            .setTitle(title)
-            .setDescription(description)
-            .setFooter({ text: footerText, iconURL: footerIcon });
-
-        message.reply({ embeds: [embed] });
-    } catch (error) {
-        console.error('Error sending embed:', error);
-    }
+    
+        
+    );
+    WelcomeChannel.send({embeds: [WelcomeEmbed]})
+    
 }

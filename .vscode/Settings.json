@@ -1,5 +1,5 @@
 {
-    "GuildID": "",
+    
     "Prefix": {
         "HelpPrefix": "?",
         "InfoPrefix": "!"
@@ -9,5 +9,11 @@
         "membercount": "membercount",
         "info": "info",
         "server": "info"
+    },
+    "Channels": {
+        "GuildID": "",
+        "Welcome-Channel": "1255512702823038988",
+        "Leave-Channel": "",
+        "Bot-Channel": ""
     }
 }
