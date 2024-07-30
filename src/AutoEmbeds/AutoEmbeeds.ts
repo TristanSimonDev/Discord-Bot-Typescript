@@ -1,5 +1,5 @@
 import * as Discord from "discord.js";
-import * as json from "../../.vscode/Settings.json";
+import * as json from '../../vscode/Settings.json';
 
 const Channels = json.Channels;
 

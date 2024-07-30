@@ -1,5 +1,5 @@
 import * as Discord from "discord.js";
-import * as Settings from "../.vscode/Settings.json";
+import * as Settings from "../vscode/Settings.json";
 const prefix = Settings.Prefix;
 const commands = Settings.Commands;
 

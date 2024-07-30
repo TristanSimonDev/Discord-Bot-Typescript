@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es2020", // Specify ECMAScript target version
+        "target": "ES2023", // Specify ECMAScript target version
         "module": "commonjs", // Specify module code generation
         "strict": true, // Enable all strict type-checking options
         "esModuleInterop": true, // Enables emit interoperability between CommonJS and ES Modules
@@ -9,13 +9,13 @@
         "outDir": "./dist", // Redirect output structure to the directory
         "allowSyntheticDefaultImports": true,
         "rootDir": "./src", // Specify the root directory of input files
-        "baseUrl": ".", // Base directory to resolve non-relative module names
+        "baseUrl": "./", // Base directory to resolve non-relative module names
+        "resolveJsonModule": true ,// Include modules imported with .json extension
+        "traceResolution": true, //LOG
         "paths": {
-            "@vscode/*": [".vscode/*"],
-            "@src/*": ["src/*"],
-            "@img/*": ["img/*"]
+            "@vscode/Settings.json": ["vscode/Settings.json"]
         },
-        "resolveJsonModule": true // Include modules imported with .json extension
+        
     },
     "include": [
         "src/**/*.ts" // Include all .ts files in the src directory
