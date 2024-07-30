@@ -1,6 +1,6 @@
 import * as Discord from "discord.js";
 import * as Settings from "../.vscode/Settings.json";
-import { sendEmbed } from "./AutoEmbeed";
+import { sendEmbed } from "./AutoEmbeds/AutoEmbeeds";
 const prefix = Settings.Prefix;
 const commands = Settings.Commands;
 
