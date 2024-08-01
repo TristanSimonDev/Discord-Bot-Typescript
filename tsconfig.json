@@ -12,13 +12,15 @@
         "baseUrl": "./", // Base directory to resolve non-relative module names
         "resolveJsonModule": true ,// Include modules imported with .json extension
         "traceResolution": true, //LOG
+        "moduleResolution": "node",
         "paths": {
-            "@vscode/Settings.json": ["vscode/Settings.json"]
+            "@vscode/*": ["vscode/*"],
+            "@src/*": ["src/*"],
+            "@img/*": ["img/*"],
         },
-        
     },
     "include": [
-        "src/**/*.ts" // Include all .ts files in the src directory
+        "src/*", // Include all .ts files in the src directory 
     ],
     "exclude": [
         "node_modules", // Exclude node_modules directory
