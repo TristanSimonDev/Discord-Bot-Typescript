@@ -18,10 +18,12 @@
     "ws": "^8.18.0"
   },
   "devDependencies": {
-    "typescript": "^5.5.3"
+    "@types/node": "^22.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.5.4"
   },
   "scripts": {
-    "test": "ts-node src/index.ts"
+    "test": "ts-node -r tsconfig-paths/register src/index.ts"
   },
   "keywords": [],
   "author": "",
