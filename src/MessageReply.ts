@@ -1,11 +1,19 @@
 import * as Discord from "discord.js";
-import * as Settings from "../vscode/Settings.json";
+import * as Settings from "@vscode/Settings.json";
+import { settings } from "ts-mixer";
 const prefix = Settings.Prefix;
 const commands = Settings.Commands;
+const channels = Settings.Channels
+const Roles = Settings.Roles
 
-export function MessageReply(message: Discord.Message) {
+function delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+export async function MessageReply(message: Discord.Message) {
     if (message.author.bot) return;
-    const messagecontent = message.content;
+    const member = message.guild?.members.cache.get(message.author.id);
+    const messagecontent = message.content.toLowerCase();
     const args = messagecontent.split(" ");
 
     //Help events
@@ -16,10 +24,24 @@ export function MessageReply(message: Discord.Message) {
 
     //info commands
 
-    if (args[0] == prefix.InfoPrefix + commands.info) {
+    if (messagecontent == prefix.InfoPrefix + commands.info) {
         message.reply(`This guild has ${message.guild?.memberCount} members.`);
     }
 
-    if (messagecontent == "test") {
-    }
+    //Verify
+    if (messagecontent == prefix.VerifyPrefix + commands.verify && message.channelId === channels["Verify-Channel"]) {
+        message.react("✅")
+        try {
+            member?.roles.add(Roles["Verify-Role"])
+            await delay(5000)
+            message.delete()
+            
+        } catch (err) {
+            console.log("Role Failed")
+        }
+
+        
+        
+
+    } 
 }

@@ -2,18 +2,24 @@
     
     "Prefix": {
         "HelpPrefix": "?",
-        "InfoPrefix": "!"
+        "InfoPrefix": "!",
+        "VerifyPrefix": "$"
     },
     "Commands": {
         "help": "help",
         "membercount": "membercount",
         "info": "info",
-        "server": "info"
+        "server": "info",
+        "verify": "verify"
     },
     "Channels": {
         "GuildID": "",
         "Welcome-Channel": "1255512702823038988",
         "Leave-Channel": "",
-        "Bot-Channel": ""
+        "Bot-Channel": "",
+        "Verify-Channel": "1255801973668843580"
+    },
+    "Roles": {
+        "Verify-Role": "1258372497364095018"
     }
 }

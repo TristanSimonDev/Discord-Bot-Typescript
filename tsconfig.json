@@ -11,7 +11,7 @@
         "rootDir": "./src", // Specify the root directory of input files
         "baseUrl": "./", // Base directory to resolve non-relative module names
         "resolveJsonModule": true ,// Include modules imported with .json extension
-        "traceResolution": true, //LOG
+        //"traceResolution": true, //LOG
         "moduleResolution": "node",
         "paths": {
             "@vscode/*": ["vscode/*"],
