@@ -24,6 +24,6 @@ export async function WelcomeEmbed_VerifyEmbed(Member: Discord.GuildMember) {
         .setThumbnail(Member.displayAvatarURL())
     
     WelcomeChannel.send({ embeds: [WelcomeEmbed] });
-    VerrifyChannel.send({embeds: [VerifyEmbed]})
+    VerrifyChannel.send({ embeds: [VerifyEmbed]})
 }
 
