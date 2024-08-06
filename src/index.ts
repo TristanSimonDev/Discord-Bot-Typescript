@@ -8,7 +8,7 @@ const Client = new Discord.Client({
     intents: [3276799],
 });
 
-Client.on("ready", async (Client) => {
+Client.once("ready", async (Client) => {
     console.log(`Client: ${Client.user.tag} is ready`);
 });
 
@@ -19,5 +19,10 @@ Client.on("guildMemberAdd", async (guildMemberAdd) => {
 Client.on("messageCreate", async (message) => {
     MessageReply(message);
 });
+
+Client.on("messageReactionAdd", async (reaction, user) => {
+    console.log(`${reaction}, ${user.globalName}`)
+})
+  
 
 Client.login(process.env.TOKEN);
