@@ -2,6 +2,7 @@ import * as Discord from "discord.js";
 import * as dotenv from "dotenv";
 import { MessageReply } from "./MessageReply";
 import * as AutoEmbeds from "./AutoEmbeds/AutoEmbeds";
+import * as ReactionReply from './Reactions'
 dotenv.config();
 
 const Client = new Discord.Client({
@@ -21,7 +22,7 @@ Client.on("messageCreate", async (message) => {
 });
 
 Client.on("messageReactionAdd", async (reaction, user) => {
-    console.log(`${reaction}, ${user.globalName}`)
+    ReactionReply.reaction([reaction, user])
 })
   
 
