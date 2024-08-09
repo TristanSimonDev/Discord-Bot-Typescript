@@ -11,6 +11,25 @@ const Client = new Discord.Client({
 
 Client.once("ready", async (Client) => {
     console.log(`Client: ${Client.user.tag} is ready`);
+    const channelId = "1270330862675820554"; // Example channel ID
+    const targetMessageId = "1270351064759013446"; // Example message ID
+
+    const channel = Client.channels.cache.get(channelId) as Discord.TextChannel;
+
+    if (channel) {
+        try {
+            // Fetch the target message
+            const message = await channel.messages.fetch(targetMessageId);
+
+            // Check for reactions
+            const reactions = message.reactions.cache;
+            reactions.forEach((reaction) => {
+                console.log(`Reaction: ${reaction.emoji.name}, Count: ${reaction.count}`);
+            });
+        } catch (error) {
+            console.error('Error fetching the message:', error);
+        }
+    }
 });
 
 Client.on("guildMemberAdd", async (guildMemberAdd) => {
