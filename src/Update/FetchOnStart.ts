@@ -1,6 +1,5 @@
 import * as Discord from "discord.js";
 import * as SettingsJSON from "@vscode/Settings.json";
-import { reaction } from "@src/Reactions";
 
 export async function Init(Client: Discord.Client) {
     const FetchReactionInRolesCH = async ([MessageID, ChannelId]: [string, string]) => { 
