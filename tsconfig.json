@@ -18,6 +18,7 @@
             "@vscode/*": [".vscode/*"],
             "@src/*": ["src/*"],
             "@img/*": ["img/*"],
+            "@Init/*": ["src/Update/*"],
         },
     },
     "include": [

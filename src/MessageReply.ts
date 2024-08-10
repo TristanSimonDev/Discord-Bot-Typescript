@@ -1,6 +1,5 @@
 import * as Discord from "discord.js";
 import * as Settings from "@vscode/Settings.json";
-import { settings } from "ts-mixer";
 const prefix = Settings.Prefix;
 const commands = Settings.Commands;
 const channels = Settings.Channels

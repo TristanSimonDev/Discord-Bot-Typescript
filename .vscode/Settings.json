@@ -16,10 +16,15 @@
         "GuildID": "",
         "Welcome-Channel": "1255512702823038988",
         "Leave-Channel": "",
+        "ReactionRole-Channle": "1270330862675820554",
         "Bot-Channel": "",
+
         "Verify-Channel": "1255801973668843580"
     },
     "Roles": {
         "Verify-Role": "1258372497364095018"
+    },
+    "Messages": {
+        "ReactionRole-Message": "1270351064759013446"
     }
 }
