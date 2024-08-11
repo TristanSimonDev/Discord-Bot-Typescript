@@ -16,15 +16,27 @@
         "GuildID": "",
         "Welcome-Channel": "1255512702823038988",
         "Leave-Channel": "",
-        "ReactionRole-Channle": "1270330862675820554",
+        "ReactionRole-Channle": "1272092694302298113",
+        "ReactionRoleLog-Channel": "1272100246775926804",
         "Bot-Channel": "",
 
         "Verify-Channel": "1255801973668843580"
     },
     "Roles": {
-        "Verify-Role": "1258372497364095018"
+        "Verify-Role": "1258372497364095018",
+        "ReactionRoleEmoji": {
+            "GreenCircle": "🟢",
+            "RedCircle": "🔴",
+            "BlueCircle": "🔵",
+            "OrangeCircle": "🟠",
+            "YellowCircle": "🟡",
+            "PurpleCircle": "🟣",
+            "BlackCircle": "⚫",
+            "WhiteCircle": "⚪",
+            "BrownCircle": "🟤"
+        }
     },
     "Messages": {
-        "ReactionRole-Message": "1270351064759013446"
+        "ReactionRole-Message": "1272092740951347324"
     }
 }
