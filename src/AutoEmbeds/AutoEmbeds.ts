@@ -27,5 +27,17 @@ export async function WelcomeEmbed_VerifyEmbed(Member: Discord.GuildMember) {
     
     WelcomeChannel.send({ embeds: [WelcomeEmbed] });
     VerrifyChannel.send({ embeds: [VerifyEmbed] });
+
+
+    
+
+
 }
 
+export async function VerifyLog(Member: Discord.GuildMember) {
+    let verifylog = Member.guild.channels.cache.get(Channels["VerifyLog-Channel"]) as Discord.TextChannel
+    const VerifyEmbed = new Discord.EmbedBuilder()
+    .setTitle("test")
+    
+    verifylog.send({ embeds: [VerifyEmbed] })
+}
