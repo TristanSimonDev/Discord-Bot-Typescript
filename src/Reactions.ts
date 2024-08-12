@@ -11,6 +11,7 @@ export async function reaction([reaction, user]: [
     Discord.User | Discord.PartialUser
 ]) {
     if (reaction.message.author?.bot) return;
+    
     const ReactionRoleLogChannel = reaction.message.guild?.channels.cache.get(SettingsJSON.Channels["ReactionRoleLog-Channel"]) as Discord.TextChannel
 
 

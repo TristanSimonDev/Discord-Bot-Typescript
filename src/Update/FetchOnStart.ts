@@ -10,7 +10,7 @@ export async function Init(Client: Discord.Client) {
 
         const reactions = message.reactions.cache;
 
-        reactions.forEach (async reaction => {
+        reactions.forEach(async reaction => {
             console.log(`Reaction: ${reaction.emoji.name}, CNT ${reaction.count}`)
         });
         for (const emoji of emojis) {
@@ -26,25 +26,5 @@ export async function Init(Client: Discord.Client) {
     }
     
     
-
-    /*
-    const channel = Client.channels.cache.get(channelId) as Discord.TextChannel;
-
-    if (channel) {
-        try {
-            // Fetch the target message
-            const message = await channel.messages.fetch(targetMessageId);
-
-            // Check for reactions
-            const reactions = message.reactions.cache;
-            reactions.forEach((reaction) => {
-                console.log(`Reaction: ${reaction.emoji.name}, Count: ${reaction.count}`);
-            });
-        } catch (error) {
-            console.error('Error fetching the message:', error);
-        }
-    }
-
-    */
     
 }

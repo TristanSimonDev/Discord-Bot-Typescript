@@ -23,6 +23,7 @@
     },
     "include": [
         "src/*", // Include all .ts files in the src directory 
+        "img/*"
     ],
     "exclude": [
         "node_modules", // Exclude node_modules directory

@@ -44,7 +44,7 @@ const RareRoles = [
     [["Infinity"], [1, 50000000000]],   // Infinity
 ];
 
-
+console.log(RareRoles[1][0][1])
 
 const getRarity = () => {
     let newRarityArray: any[] = [];
@@ -81,5 +81,5 @@ const getRarity = () => {
     return selectedRarity;
 }
 
-for (let Rolls = 1; Rolls < 100; Rolls++) {getRarity();}
+//for (let Rolls = 1; Rolls < 100; Rolls++) {getRarity();}
 
