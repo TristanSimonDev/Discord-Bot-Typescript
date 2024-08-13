@@ -1,4 +1,4 @@
-let luck = 10000000000;
+let luck = 10000;
 let clone = 1;
 const bulk = undefined;
 
@@ -44,7 +44,6 @@ const RareRoles = [
     [["Infinity"], [1, 50000000000]],   // Infinity
 ];
 
-console.log(RareRoles[1][0][1])
 
 const getRarity = () => {
     let newRarityArray: any[] = [];
@@ -68,18 +67,21 @@ const getRarity = () => {
 
     let cumulativeWeight = 0;
     let selectedRarity = null;
+    let Index = null 
 
     for (let i = 0; i < newRarityArray.length; i++) {
         cumulativeWeight += newRarityArray[i];
         if (rnd < cumulativeWeight) {
             selectedRarity = RareRoles[i][0][0]; // Assuming you want to return the rarity symbol
+            Index = RareRoles [i][1][1]
             break;
         }
     }
 
-    console.log(selectedRarity); // Print or return the result as needed
-    return selectedRarity;
+    
+    return `You got ${selectedRarity} the Chance was 1 in ${Index} with Luck: ${luck}`;
+
 }
 
-//for (let Rolls = 1; Rolls < 100; Rolls++) {getRarity();}
+for (let Rolls = 1; Rolls < 10; Rolls++) {console.warn(getRarity());}
 
