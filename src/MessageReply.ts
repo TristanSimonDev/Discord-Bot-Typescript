@@ -1,6 +1,8 @@
 import * as Discord from "discord.js";
 import * as Settings from "@vscode/Settings.json";
 import * as AutoEmbed from '@src/AutoEmbeds/AutoEmbeds'
+import * as Roll from './rarity'
+
 const prefix = Settings.Prefix;
 const commands = Settings.Commands;
 const channels = Settings.Channels
@@ -17,6 +19,9 @@ export async function MessageReply(message: Discord.Message) {
     const member = message.guild?.members.cache.get(message.author.id) as Discord.GuildMember;
     const messagecontent = message.content.toLowerCase();
     const args = messagecontent.split(" ");
+
+    Roll.RollRarity(message)
+
 
     //Help events
 

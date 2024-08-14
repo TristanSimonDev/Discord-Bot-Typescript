@@ -11,7 +11,6 @@
     "lodash": "^4.17.21",
     "lodash.snakecase": "^4.1.1",
     "magic-bytes.js": "^1.10.0",
-    "nodemon": "^3.1.4",
     "ts-mixer": "^6.0.4",
     "tslib": "^2.6.2",
     "undici": "^6.13.0",
@@ -20,12 +19,14 @@
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
+    "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.5.4"
   },
   "scripts": {
-    "test": "ts-node -r tsconfig-paths/register src/index.ts"
+    "test": "ts-node -r tsconfig-paths/register src/index.ts",
+    "nodemon": "nodemon --exec ts-node -r tsconfig-paths/register src/index.ts"
   },
   "keywords": [],
   "author": "",

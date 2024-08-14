@@ -1,6 +1,7 @@
 import * as Discord from "discord.js";
 import * as SettingsJSON from "@vscode/Settings.json";
 
+//Pass the emojis in the JSON
 const emojis = Object.values(SettingsJSON.Roles.ReactionRoleEmoji)
 export async function Init(Client: Discord.Client) {
     
@@ -18,7 +19,7 @@ export async function Init(Client: Discord.Client) {
         }
     };
 
-    //Run Async
+    //Run Async Function
     try  {
         FetchReactionInRolesCH([SettingsJSON.Messages["ReactionRole-Message"], SettingsJSON.Channels["ReactionRole-Channle"]]);
     } catch (error) {
