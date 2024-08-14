@@ -4,7 +4,7 @@ import { disconnect } from 'process';
 
 const roleChannel =  SettingsJSON.Channels['Roll-Channel']
 
-let luck = 100;
+let luck = 100000;
 let clone = 1;
 const bulk = undefined;
 
@@ -136,14 +136,17 @@ export async function RollRarity(Message: Discord.Message | Discord.PartialMessa
 
         const Embed = new Discord.EmbedBuilder()
             .setTitle("New Rarity")
-            .setDescription(`User: ${Message.author?.globalName} Rolled ${selectedRarity} ID: ${ID}
-
-                Chance: ${RawPercentage}% with Luck ${ModifiedPercentage}%
-                Value: 1 in ${Index} [with Luck 1 in ${ModifiedIndex}]  
+            .setDescription(`${Message.author?.globalName} Rolled ${selectedRarity}` +
+            `\n\nChance: ${RawPercentage}%` +
+            `\nwith Luck ${ModifiedPercentage}%`+ 
+            `\n\nValue: 1 in ${Index}` + 
+            `\nwith Luck 1 in ${ModifiedIndex}` +
+            `\n\nLuck: ${luck}` +
+            `\nBulk: ${bulk}` +
+            `\n\nID ${ID}/${Array.length}`
+            )
+        
                 
-                Luck: ${luck}
-                Bulk: ${bulk}
-                `)
         
         RollChannel.send({ embeds: [Embed] })
     
