@@ -4,7 +4,9 @@ import { MessageReply } from "./MessageReply";
 import * as AutoEmbeds from "./AutoEmbeds/AutoEmbeds";
 import * as ReactionReply from "./Reactions";
 import * as Init from "@Init/FetchOnStart";
+import * as EnvLoader from './envLoader'
 import path from 'path';
+import { env } from "process";
 dotenv.config();
 
 const Client = new Discord.Client({
@@ -29,4 +31,4 @@ Client.on("messageReactionAdd", async (reaction, user) => {
     ReactionReply.Reaction([reaction, user]);
 });
 
-Client.login(process.env.TOKEN);
+Client.login(EnvLoader.LoadAsyncEnv());
