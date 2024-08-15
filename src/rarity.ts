@@ -8,6 +8,8 @@ let luck = 100000;
 let clone = 1;
 const bulk = undefined;
 
+
+
 //[[name] [Chance] [roleID] [ID]]
 
 const RarityInNestedArray: any[] = [
@@ -54,16 +56,21 @@ const RarityInNestedArray: any[] = [
 ];
 
 
+function formatLargeNumber(num: number): string {
+    const suffixes = ["", "k", "M", "B", "T", "q"];
+    let index = 0;
+
+    while (num >= 1000 && suffixes.length - 1) {
+        num /= 1000
+        index++
+    }
+
+    let resultStr = num.toFixed(2).replace(/\.00$/, '').replace(/(\.\d)0$/, '$1');
+    return resultStr + suffixes[index];
+}
 
 export async function RollRarity(Message: Discord.Message | Discord.PartialMessage) {
-    let padding = (maxLength: number, Index: number) => {
-        let paddedNumber = Index.toString().padStart(maxLength, " ")
-        return paddedNumber
-    }
-    
-    
-    
-    
+     
     const getRarity = (Array: any[]) => {
         let newRarityArray: any[] = [];
         let TotalWeight = 0;
@@ -95,36 +102,14 @@ export async function RollRarity(Message: Discord.Message | Discord.PartialMessa
         let ModifiedPercentage: any;
         let ID: any;
     
-        let maxLengthForIndex = 0;
-        let maxLengthForModifiedIndex = 0;
-        let maxLengthForModifiedPercentage = 0
-    
-        //maxLengthForIndex
-        for (let i = 0; i < RarityInNestedArray.length; i++) {
-            let length = RarityInNestedArray[i][1][1].toString().length;
-            if (length > maxLengthForIndex) {
-                maxLengthForIndex = length;
-            }
-        }
-    
-        //maxLengthForModifiedPercentage
-        for (let i = 0; i < (Array[i][1][1] / luck).toString().length; i++) {
-            let length = (Array[i][1][1] / luck).toString().length;
-            if (length > maxLengthForModifiedPercentage) {
-                maxLengthForModifiedPercentage = length;
-            }
-        }
-    
-    
-    
         for (let i = 0; i < newRarityArray.length; i++) {
             cumulativeWeight += newRarityArray[i];
             if (rnd < cumulativeWeight) {
                 selectedRarity = Array[i][0][0]; //The Name
                 Index = Array[i][1][1];
                 ID = Array[i][3]
-                ModifiedPercentage = (newRarityArray[i] * 100).toExponential(1)
-                RawPercentage = (Array[i][1][0] / Array[i][1][1] * 100).toExponential(1)
+                ModifiedPercentage = (newRarityArray[i] * 100)
+                RawPercentage = (Array[i][1][0] / Array[i][1][1] * 100)
                 ModifiedIndex = Array[i][1][1] / luck
                 ModifiedIndex < 1 ? ModifiedIndex = 1 : ""
                 
@@ -139,9 +124,9 @@ export async function RollRarity(Message: Discord.Message | Discord.PartialMessa
             .setDescription(`${Message.author?.globalName} Rolled ${selectedRarity}` +
             `\n\nChance: ${RawPercentage}%` +
             `\nwith Luck ${ModifiedPercentage}%`+ 
-            `\n\nValue: 1 in ${Index}` + 
-            `\nwith Luck 1 in ${ModifiedIndex}` +
-            `\n\nLuck: ${luck}` +
+            `\n\nValue: 1 in ${formatLargeNumber(Index)}` + 
+            `\nwith Luck 1 in ${formatLargeNumber(ModifiedIndex)}` +
+            `\n\nLuck: ${formatLargeNumber(luck)}` +
             `\nBulk: ${bulk}` +
             `\n\nID ${ID}/${Array.length}`
             )
@@ -150,7 +135,7 @@ export async function RollRarity(Message: Discord.Message | Discord.PartialMessa
         
         RollChannel.send({ embeds: [Embed] })
     
-        return `Rolled: ${selectedRarity} ID ${ID}: ${RawPercentage}% [${padding(maxLengthForModifiedPercentage, ModifiedPercentage)}%] the Chance was 1 in ${padding(maxLengthForIndex, Index)} [1 in ${padding(maxLengthForModifiedIndex, ModifiedIndex)}] with Luck: ${luck}`;
+        return `Rolled: ${selectedRarity} ID ${ID}: ${RawPercentage}% [${ModifiedPercentage}%] the Chance was 1 in ${Index} [1 in ${ModifiedIndex}] with Luck: ${luck}`;
         
     };
     
