@@ -16,7 +16,7 @@ function getRarity(RarityArray: any[]) {
         let NewWeight = Weight / luck;
 
         if (NewWeight < 1) {
-            
+            NewWeight = 1
         }
 
         let fraction = 1 / NewWeight;
@@ -32,7 +32,7 @@ function getRarity(RarityArray: any[]) {
     for (let i = 0; i < newRarityArray.length; i++) {
         acc += newRarityArray[i];
         if (rnd < acc) {
-            selectedRarity = filteredRarityArray[i][0][0];
+            selectedRarity = RarityTable[i][0][0];
             break;
         }
     }
@@ -41,6 +41,6 @@ function getRarity(RarityArray: any[]) {
 }
 
 for (let i = 0; i < 100; i++) {
-    console.log(`${getRarity(RarityTable)} and ${i}` )
+    console.log(`${getRarity(RarityTable)} and ` )
 }
  

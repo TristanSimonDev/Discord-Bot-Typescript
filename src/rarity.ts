@@ -120,15 +120,17 @@ export async function RollRarity(Message: Discord.Message | Discord.PartialMessa
         const RollChannel = Message.guild?.channels.cache.get(roleChannel) as Discord.TextChannel
 
         const Embed = new Discord.EmbedBuilder()
-            .setTitle("New Rarity")
-            .setDescription(`${Message.author?.globalName} Rolled ${selectedRarity}` +
+            .setTitle("New Rarity <:Lightning:1273879490250145803>")
+            .setDescription(`\`${Message.author?.globalName}\`` +
+            `\nRolled: ${selectedRarity}` +
             `\n\nChance: ${RawPercentage}%` +
-            `\nwith Luck ${ModifiedPercentage}%`+ 
+            `\nwith <:CloverGreen:1273876673980534856> ${ModifiedPercentage}%`+ 
             `\n\nValue: 1 in ${formatLargeNumber(Index)}` + 
-            `\nwith Luck 1 in ${formatLargeNumber(ModifiedIndex)}` +
-            `\n\nLuck: ${formatLargeNumber(luck)}` +
-            `\nBulk: ${bulk}` +
-            `\n\nID ${ID}/${Array.length}`
+            `\nwith <:CloverGreen:1273876673980534856> 1 in ${formatLargeNumber(ModifiedIndex)}` +
+            `\n\nModifiers<:Settings:1273951989134397440>:` +
+            `\n\nLuck: ${formatLargeNumber(luck)} <:CloverGreen:1273876673980534856>` +
+            `\nBulk: ${bulk} <:Card:1273951765246771255>` +
+            `\n\nID ${ID}/${Array.length} <:Scroll:1273880004588994610>`
             )
         
                 
@@ -139,8 +141,8 @@ export async function RollRarity(Message: Discord.Message | Discord.PartialMessa
         
     };
     
-    for (let Rolls = 0; Rolls < 1; Rolls++) {
-        console.error(getRarity(RarityInNestedArray));
-    }
+ 
+    console.error(getRarity(RarityInNestedArray));
+
     
 }

@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
+    "electron": "^31.4.0",
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
@@ -31,5 +32,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "![Alt text](./img/readme/mainlogo.png)\r # How to Start"
+  "description": "![Alt text](./img/readme/mainlogo.png)\r # How to Start",
+  "directories": {
+    "test": "test"
+  }
 }

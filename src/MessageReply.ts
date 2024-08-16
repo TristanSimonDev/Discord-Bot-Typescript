@@ -26,7 +26,7 @@ export async function MessageReply(message: Discord.Message) {
     //Help events
 
     if (messagecontent == prefix.HelpPrefix + commands.help) {
-        message.reply("you used the help command");
+        await message.channel.send(`Here is your Clover emoji: <:CloverGreen:1273876673980534856>`);
     }
 
     //info commands
