@@ -5,7 +5,10 @@ import * as AutoEmbeds from "./AutoEmbeds/AutoEmbeds";
 import * as ReactionReply from "./Reactions";
 import * as Init from "@Init/FetchOnStart";
 import * as EnvLoader from './envLoader'
+
+import * as functions from '@functions/allFunctions'
 dotenv.config();
+
 
 const Client = new Discord.Client({
     intents: [3276799],
@@ -14,9 +17,8 @@ const Client = new Discord.Client({
 Client.once("ready", async (Client) => {
     console.log(`Client: ${Client.user.tag} is ready`);
     Init.Init(Client)
-    //ChangeImage(Client)
-
 });
+
 Client.on("guildMemberAdd", async (guildMemberAdd) => {
     AutoEmbeds.WelcomeEmbed_VerifyEmbed(guildMemberAdd);
 });
@@ -28,5 +30,13 @@ Client.on("messageCreate", async (message) => {
 Client.on("messageReactionAdd", async (reaction, user) => {
     ReactionReply.Reaction([reaction, user]);
 });
+
+
+//test
+
+
+    
+
+
 
 Client.login(EnvLoader.LoadAsyncEnv());

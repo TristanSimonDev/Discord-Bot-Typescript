@@ -2,6 +2,7 @@ import * as Discord from "discord.js";
 import * as Settings from "@vscode/Settings.json";
 import * as AutoEmbed from '@src/AutoEmbeds/AutoEmbeds'
 import * as Roll from './rarity'
+import * as functions from '@functions/allFunctions'
 
 const prefix = Settings.Prefix;
 const commands = Settings.Commands;
@@ -9,9 +10,7 @@ const channels = Settings.Channels
 const Roles = Settings.Roles
 
 //delay
-function delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+
 //function
 export async function MessageReply(message: Discord.Message) {
 
@@ -41,7 +40,7 @@ export async function MessageReply(message: Discord.Message) {
         try {
             member?.roles.add(Roles["Verify-Role"])
             AutoEmbed.VerifyLog(member)
-            await delay(5000)
+            await functions.delay(5000)
             message.delete()
             
         } catch (err) {

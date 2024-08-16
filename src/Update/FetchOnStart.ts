@@ -12,7 +12,7 @@ export async function Init(Client: Discord.Client) {
         const reactions = message.reactions.cache;
 
         reactions.forEach(async reaction => {
-            console.log(`Reaction: ${reaction.emoji.name}, CNT ${reaction.count}`)
+            //console.log(`Reaction: ${reaction.emoji.name}, CNT ${reaction.count}`)
         });
         for (const emoji of emojis) {
             await message.react(emoji);

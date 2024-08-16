@@ -1,7 +1,8 @@
 import * as Discord from 'discord.js'
 import * as SettingsJSON from '@vscode/Settings.json'
-import { disconnect } from 'process';
+import * as functions from '@functions/allFunctions'
 
+const formatLargeNumber = functions.formatLargeNumber
 const roleChannel =  SettingsJSON.Channels['Roll-Channel']
 
 let luck = 100000;
@@ -56,18 +57,7 @@ const RarityInNestedArray: any[] = [
 ];
 
 
-function formatLargeNumber(num: number): string {
-    const suffixes = ["", "k", "M", "B", "T", "q"];
-    let index = 0;
 
-    while (num >= 1000 && suffixes.length - 1) {
-        num /= 1000
-        index++
-    }
-
-    let resultStr = num.toFixed(2).replace(/\.00$/, '').replace(/(\.\d)0$/, '$1');
-    return resultStr + suffixes[index];
-}
 
 export async function RollRarity(Message: Discord.Message | Discord.PartialMessage) {
      

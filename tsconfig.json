@@ -9,7 +9,7 @@
         "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file
         "outDir": "./dist", // Redirect output structure to the directory
         "allowSyntheticDefaultImports": true,
-        "rootDir": "./src", // Specify the root directory of input files
+        "rootDir": "./", // Specify the root directory of input files
         "baseUrl": "./", // Base directory to resolve non-relative module names
         "resolveJsonModule": true ,// Include modules imported with .json extension
         //"traceResolution": true, //LOG
@@ -19,12 +19,15 @@
             "@src/*": ["src/*"],
             "@img/*": ["img/*"],
             "@Init/*": ["src/Update/*"],
+            "@functions/*": ["functions/*"],
+            "@test/*": ["test/*"],
+            
         },
     },
     "include": [
         "src/*",
         "img/*",
-        "tets/*"
+        "test/*"
     ],
     "exclude": [
         "node_modules", // Exclude node_modules directory
